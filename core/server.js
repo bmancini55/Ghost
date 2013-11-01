@@ -215,7 +215,7 @@ function activateTheme() {
 // This is used to ensure the right content is served, and is not for security purposes
 function manageAdminAndTheme(req, res, next) {
     // TODO improve this regex
-    res.isAdmin = /(^\/ghost\/)/.test(req.url);
+    res.isAdmin = /(^\/ghost\/)/.test(req.path);
     if (res.isAdmin) {
         server.enable('admin');
         server.disable(server.get('activeTheme'));
